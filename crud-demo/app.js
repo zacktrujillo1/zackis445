@@ -1,3 +1,8 @@
+// load env
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").load();
+}
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -37,5 +42,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const mongoose = require("mongoose");
+
+const user = process.env.MDB_USER;
+const passwd = process.env.MDB_PASSWORD;
+
+mongoose
+  .connect(`mongodb://${user}:${passwd}@ds163689.mlab.com:63689/is445`)
+  .then(() => console.log("connection successful"))
+  .catch(err => console.error(err));
 
 module.exports = app;
