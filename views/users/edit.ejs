@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit user</title>
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/edit_user.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+      <a class="navabar-brand" href="#">Fixed top</a>
+      <h1>Contact Management</h1>
+      <div class="btn btn-light btn-group btn-group-justified">
+        <a href="/users" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Index</a>
+        <a href="/users/user" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New</a>
+      </div>
+    </nav> 
+ 
+  <div class="container">
+    <h1>Edit User</h1>
+
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="name" value="<%= user.name %>" />
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>
+            <input type="text" name="email" value="<%= user.email %>" />
+          </td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td>
+            <input type="text" name="phone" value="<%= user.phone %>" />
+          </td>
+        </tr>   
+        <tr>
+          <td colspan="2">
+            <button id="updateButton">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
