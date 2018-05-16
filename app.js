@@ -47,7 +47,8 @@ app.use(function (err, req, res, next) {
 
 const mongoose = require("mongoose");
 
-const user = process.env.MDB_USER;
+const user = process.env.MDB_Uo
+SER;
 const passwd = process.env.MDB_PASSWORD;
 
 mongoose
